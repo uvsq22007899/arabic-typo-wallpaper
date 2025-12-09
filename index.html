@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fond prénom arabe</title>
 
-    <title>Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+</head>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
+  <!-- Calque utilisé pour changer la teinte du fond -->
+  <div id="tintOverlay"></div>
 
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+  <!-- Panneau UI -->
+  <div id="ui-panel">
+    <input id="latinInput" type="text" placeholder="Écris ton prénom ici">
+    <input id="tintPicker" type="color" value="#304c89">
+    <button id="downloadBtn">Télécharger</button>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
 </html>

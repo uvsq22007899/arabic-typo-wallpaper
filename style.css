@@ -1,8 +1,91 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url("/assets/fondd.svg"); /* ton SVG */
+  background-size: cover;
+  background-position: center;
 }
 
+/* Canvas p5 */
 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* au-dessus du fond + overlay */
   display: block;
+}
+
+/* Overlay qui applique la teinte */
+#tintOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  mix-blend-mode: hue;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- UI PANEL --- */
+#ui-panel {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+/* Champ prénom */
+#latinInput {
+  padding: 6px 10px;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+#latinInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Color picker */
+#tintPicker {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: none;
+  cursor: pointer;
+}
+
+/* Bouton Télécharger */
+#downloadBtn {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+#downloadBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
 }
