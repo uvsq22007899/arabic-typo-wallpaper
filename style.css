@@ -4,37 +4,30 @@ body {
   padding: 0;
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-image: url("assets/fondd.svg"); /* ton SVG */
-  background-size: cover;
-  background-position: center;
+  background: #000; /* fallback */
+  overflow: hidden;
 }
+
 
 /* Canvas p5 */
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; /* au-dessus du fond + overlay */
+  z-index: 1;
   display: block;
 }
 
-/* Overlay qui applique la teinte */
 #tintOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  mix-blend-mode: hue;
-  pointer-events: none;
-  z-index: 0;
+  display: none; /* on ne l'utilise plus, tout est dans le canvas */
 }
+
+
 
 /* --- UI PANEL --- */
 #ui-panel {
   position: fixed;
-  top: 20px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -89,3 +82,9 @@ canvas {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
 }
+
+#sizeSlider{
+  width: 140px;
+  accent-color: rgba(255,255,255,0.9);
+}
+
